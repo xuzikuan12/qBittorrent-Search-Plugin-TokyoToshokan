@@ -1,5 +1,6 @@
-#VERSION: 2.1
+#VERSION: 2.2
 #Author: Douman (douman@gmx.se)
+#        Bruno Barbieri (brunorex@gmail.com)
 
 try:
     #python3
@@ -98,7 +99,7 @@ class tokyotoshokan(object):
         parser = self.MyHtmlParseWithBlackJack(self.url)
 
         torrent_list = re_compile("(?s)<table class=\"listing\">(.*)</table>")
-        additional_links = re_compile("/?lastid=[0-9]+&page=[0-9]+&terms={}".format(query))
+        additional_links = re_compile("\?lastid=[0-9]+&page=[0-9]+&terms={}".format(query.replace('%20', '\\+')))
 
         request_url = '{0}/search.php?terms={1}&type={2}&size_min=&size_max=&username='.format(self.url, query, self.supported_categories[cat])
         data = retrieve_url(request_url)
