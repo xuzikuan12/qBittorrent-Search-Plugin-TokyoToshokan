@@ -1,4 +1,4 @@
-#VERSION: 2.2
+#VERSION: 2.2.1
 #Author: Douman (douman@gmx.se)
 #        Bruno Barbieri (brunorex@gmail.com)
 
@@ -107,7 +107,7 @@ class tokyotoshokan(object):
         data = torrent_list.search(data).group(0)
         parser.feed(data)
         parser.close()
-        for res_link in map(lambda link: "".join((self.url, "/search.php?", link.group(0))), additional_links.finditer(data)):
+        for res_link in map(lambda link: "".join((self.url, "/search.php", link.group(0))), additional_links.finditer(data)):
             data = retrieve_url(res_link)
             data = torrent_list.search(data).group(0)
             parser.feed(data)
