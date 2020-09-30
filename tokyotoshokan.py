@@ -1,4 +1,4 @@
-#VERSION: 2.3
+#VERSION: 2.3.1
 #Author: Douman (douman@gmx.se)
 #        Bruno Barbieri (brunorex@gmail.com)
 
@@ -16,7 +16,7 @@ from novaprinter import prettyPrinter
 from helpers import download_file, retrieve_url
 
 class tokyotoshokan(object):
-    url = 'http://tokyotosho.info'
+    url = 'https://www.tokyotosho.info' # 2020-09-30
 
     global page_count
     page_count = 1
